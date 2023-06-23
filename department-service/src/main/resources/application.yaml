@@ -1,0 +1,17 @@
+
+spring:
+  application:
+    name: department-service
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#our department service should fetch configuration from configurations package
+#from department-service.yaml
+  config:
+    import: "optional:configserver:http://localhost:8088"
